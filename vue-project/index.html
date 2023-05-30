@@ -11,12 +11,20 @@
 
 <body>
   <div id="content" class="container">
-    <h1>Hello Vue!</h1>
-    <p>lorem ipsum</p>
+    <h1>{{pageTitle}}</h1>
+    <p>{{info}}</p>
   </div>
-  <script type="module" src="/src/main.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script type="module" src="main.js"></script>
   <script>
-    Vue.createApp().mount('#content');
+    Vue.createApp({
+      data(){
+        return{
+          pageTitle:'Hello, Vue',
+          info: 'lorem ipsum'
+        };
+      }
+    }).mount('#content');
   </script>
 </body>
 
